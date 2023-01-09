@@ -3,7 +3,7 @@ const app = express()
 const port = process.env.PORT || 8080
 const canvas = require('canvas');
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
 
   const imgUrl = req.urlParams.imgUrl;
 
