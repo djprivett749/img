@@ -2,6 +2,13 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 const canvas = require('canvas');
+const querystring = require('querystring');
+
+app.use((req, res, next) => {
+	const parsedQs = querystring.parse(url.parse('https://domian.com' + req.originalUrl).query);
+	req.urlParams = parsedQs;
+	next();
+});
 
 app.get('/', async (req, res) => {
 
